@@ -3,7 +3,6 @@ const Product = require('./Product');
 const Category = require('./Category');
 const Tag = require('./Tag');
 const ProductTag = require('./ProductTag');
-const { CallTracker } = require('assert/strict');
 
 // Products belongsTo Category
 Product.belongsTo(Category, {
@@ -18,7 +17,7 @@ Product.belongsToMany(Tag, {
   through: ProductTag
 });
 // Tags belongToMany Products (through ProductTag)
-Tag.belongsToMany(Products, { 
+Tag.belongsToMany(Product, { 
   through: ProductTag 
 });
 
